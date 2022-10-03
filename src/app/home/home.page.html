@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <p appHighlight id="botao"> Hightlight me!</p>
+
+    
+      <ion-button appHighlight [style.backgroundcolor:yellow]> yellow</ion-button>
+    <ion-button appHighlight (click)="mudar('red')"> vermelho</ion-button>
+    <ion-button appHighlight (click)="mudar('blue')">blue</ion-button>
+    <ion-button appHighlight (click)="mudar('yellow')"> red</ion-button>
+    <h1 appHighlight> Fredelin</h1>
+    <strong [ngStyle]="color">Ready to create an app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+     
+    <p>Texto de teste para <span appHighlight [cor]="cor">mostrar o marcador</span> em funcionamento</p>
+    <strong [ngStyle]="estilo">Pronto para criar um app?</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <div *ngFor="let cor of cores; let i=index; let isFirst = first; let isLast = last; let isOdd=odd; let isEven = even ">
+      {{cor}} {{i}} {{isFirst}} {{isLast}} {{isOdd}} {{isEven}}
+    </div>
+
+    <div *ngIf="mostrarInfo">
+      <p>informações adicionais bla bla bla</p>
+    </div>
+
+    <div [hidden]="!mostrarInfo">
+      <p>informações adicionais bla bla bla</p>
+    </div>
+
+    <ion-button *ngFor="let cor of cores; let i=index" (click)="mudarCor(cor)">
+      Mudar cor para {{cor}}
+    </ion-button>
+
+    <a routerLink="/sobre"  exrouterDirection="forward">Ir para sobre o sistema</a>
+  
+    <a routerLink="/tab"  exrouterDirection="forward">Ir para tab o sistema</a>
+   
+     <!--<a href="/sobre" >Ir para sobre o sistema</a>-->
+     <!--<a href="/tab" >Ir para tab o sistema</a>-->
+
+    <ion-button routerLink="/pagina1"> Ir para página 1</ion-button>
+    <ion-button routerLink="/tab"> ir para ion-tab</ion-button>
+
+  <!--
+  <ion-button (click)="cliqueAqui()"> Clique aqui</ion-button>
+  <ion-button (click)="mudarCor('blue')">Azul</ion-button>
+  <ion-button (click)="mudarCor('red')">Vermelho</ion-button>
+  <ion-button (click)="mudarCor('yellow')">amarelo</ion-button>
+-->
+</div>
+</ion-content>
